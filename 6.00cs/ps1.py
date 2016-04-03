@@ -1,5 +1,5 @@
 
-#Test case 1 - calculate the principal owed after a year if only the minimum payments were made on a credit card.
+#Problem 1 - calculate the principal owed after a year if only the minimum payments were made on a credit card.
 print("Lets calculate the amount owed on a credit card loan at the end of the year, when only the minimum payment is paid.")
 print("")
 outstandingBal = int(raw_input("How much do you owe on the loan? $" ))
