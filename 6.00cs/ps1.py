@@ -26,21 +26,21 @@
 initialBalance = float(raw_input("Enter the outstanding balance on your credit card: "))
 interestRate = float(raw_input("Enter the annual credit card interest rate as a decimal: "))
 
-# Initialize state variables
+# Initialize state variables. state variables are tbe most basic variables that describe the system.
 monthlyPayment = 0
 monthlyInterestRate = interestRate/12
 balance = initialBalance
 
 # Test increasing amounts of monthlyPayment in increments of $100
 # until it can be paid off in a year
-#use nested while loops. the second loop will run as long as the first loops parameters are not met, which is balance being less that zero.
+#use nested while loops. the second loop will run as long as the first loops parameters are not met, which is balance being less that zero. If the second loop cannot bring the balance down to zero, the second loop will exit and the first loop will increase the monthly payment by ten.
 while balance > 0:
 
     monthlyPayment += 10
     balance = initialBalance
     numMonths = 0
 
-    while numMonths < 12 and balance > 0:
+    while numMonths < 12 and balance > 0: #this is why balance can become negative.
 
         # Count this as a new month
         numMonths += 1
