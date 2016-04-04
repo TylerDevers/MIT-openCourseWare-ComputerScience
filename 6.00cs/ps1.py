@@ -23,10 +23,33 @@
 # Now write a program that calculates the minimum fixed monthly payment needed in order pay
 # off a credit card balance within 12 months. We will not be dealing with a minimum monthly
 # payment rate.
-print("Now lets determine the minimum monthly payment needed to pay off the credit card debt within a year. ")
-bal = int(raw_input("What is the outstanding balance on the card? $"))
-rate = float(raw_input("What is the annual interest rate in decimal form? "))
-minimumMonthlyPayment = int(10)
-monthlyRate = rate/12
-updatedBalance = bal * (1+monthlyRate) - minimumMonthlyPayment
-numberGuesses = 0
+initialBalance = float(raw_input("Enter the outstanding balance on your credit card: "))
+interestRate = float(raw_input("Enter the annual credit card interest rate as a decimal: "))
+
+# Initialize state variables
+monthlyPayment = 0
+monthlyInterestRate = interestRate/12
+balance = initialBalance
+
+# Test increasing amounts of monthlyPayment in increments of $100
+# until it can be paid off in a year
+#use nested while loops. the second loop will run as long as the first loops parameters are not met, which is balance being less that zero.
+while balance > 0:
+
+    monthlyPayment += 10
+    balance = initialBalance
+    numMonths = 0
+
+    while numMonths < 12 and balance > 0:
+
+        # Count this as a new month
+        numMonths += 1
+        interest = monthlyInterestRate * balance
+        balance -= monthlyPayment
+        balance += interest
+
+balance = round(balance,2)
+
+print "Monthly payment to pay off debt in 1 year:", monthlyPayment
+print "Number of months needed:", numMonths
+print "Balance:",balance
