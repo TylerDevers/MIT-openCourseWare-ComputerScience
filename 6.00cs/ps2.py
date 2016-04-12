@@ -4,11 +4,12 @@
 # that x and each element of poly is a float. evaluate_poly takes the polynomial represented
 # by poly and computes its value at x. It returns this value as a float.
 
-#
-def eval_poly(*poly):
-    polynomial = poly
-    return polynomial
+def eval_poly(polyTuple, x):
+    """takes in a tuple (), where the index is the power, and a value for x, and computes the polynomial"""
 
-print eval_poly(1)
+    total = 0.0
+    for i in xrange(len(polyTuple)): #len returns the length of the elements, so range is length
+        total += polyTuple[i] * (x ** i) #total is incremented by tuple element at [i], * x^i
+    return total
 
-#for each poly with a power of x, place that poly where x equals the index of a tuple
+print eval_poly((0.0, 0.0, 5.0, 9.3, 7.0),-13)
