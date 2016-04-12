@@ -5,7 +5,10 @@
 # by poly and computes its value at x. It returns this value as a float.
 
 #
-def eval_poly (poly):
-    print poly.index(poly)
-    
-eval_poly(1)
+def eval_poly(poly):
+    polynomial = (poly)
+    return polynomial
+
+print eval_poly(1)
+
+#for each poly with a power of x, place that poly where x equals the index of a tuple
