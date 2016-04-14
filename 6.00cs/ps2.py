@@ -6,6 +6,7 @@
 
 def eval_poly(poly, x):
     """takes in a tuple (), where the index is the power, and a value for x, and computes the polynomial"""
+    print "problem 1"
 
     total = 0.0 #initialize the base variable
     for value in range(len(poly)): #for the each element in the range that is equal to the length of the poly,
@@ -13,3 +14,5 @@ def eval_poly(poly, x):
     return total
 
 print eval_poly((0.0, 0.0, 5.0, 9.3, 7.0),-13)
+
+#problem #4 - skipping to problem 4, hangman, to keep myselp interested. The calculus problems are too boring.
