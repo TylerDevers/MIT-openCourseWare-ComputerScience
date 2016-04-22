@@ -64,6 +64,22 @@ def hangman():
     print avail_letters
 
     #while guess counter is less than 10
+    guess_counter = 10
+    guess = ""
+    while guess_counter > 0:
+        guess = raw_input("What is your guess?")
+        #guess = guess.lowercase
+        if guess not in word:
+            avail_letters.remove(guess)
+            guess_counter -= 1
+            print "Nope! Try again. You now have {guess_counter} guesses left. Your available letters are:"
+            print avail_letters
+        else:
+            avail_letters.remove(guess)
+            guess_counter -= 1
+            print "Excellent! You found one! You have {guess_counter} guesses left. Your available letters are:"
+            print avail_letters
+    print "out of guesses!"
     #if word does not contain -, then you won
     #else if letter guess is in word, replace '-' with guess, and remove letter from avail_letters.
     #increment guess counter
