@@ -63,4 +63,8 @@ def hangman():
     print "Your available letters are:"
     print avail_letters
 
+    #while guess counter is less than 10
+    #if word does not contain -, then you won
+    #else if letter guess is in word, replace '-' with guess, and remove letter from avail_letters.
+    #increment guess counter
 print hangman()
