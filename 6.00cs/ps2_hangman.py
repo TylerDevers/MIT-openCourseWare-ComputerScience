@@ -56,4 +56,11 @@ def hangman():
         blank_space = "-"
         print blank_space*length
 
+    number_guesses = 10
+    print "You have " + str(number_guesses) + " guesses left"
+
+    avail_letters = "abcdefghijklmnopqrstuvwxyz"
+    print "Your available letters are:"
+    print avail_letters
+
 print hangman()
