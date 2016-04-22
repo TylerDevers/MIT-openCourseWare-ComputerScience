@@ -49,6 +49,11 @@ wordlist = load_words()
 def hangman():
     #computer selects random word
     word = choose_word(wordlist)
-    return word
+    length  = len(word)
+    print ("Hello, I am thinking of a word that is " + str(length) + " letters long.")
+
+    for characters in str(length):
+        blank_space = "-"
+        print blank_space*length
 
 print hangman()
