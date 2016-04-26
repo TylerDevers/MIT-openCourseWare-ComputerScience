@@ -68,8 +68,9 @@ def hangman():
     guess = ""
     while guess_counter > 0:
         guess = raw_input("What is your guess?")
-        guess = guess.lowercase
+        guess = guess.lower()
         #use list() to split the word into a list of characters.
+        #iterate over the list when word guesses are made.
         if guess not in word:
             avail_letters.remove(guess)
             guess_counter -= 1
@@ -85,3 +86,5 @@ def hangman():
     #else if letter guess is in word, replace '-' with guess, and remove letter from avail_letters.
     #increment guess counter
 print hangman()
+
+"""random pick of word, request letter guess, if guess is in word remove guess from avail_letters and add it to print out of word. Will probably need ot convert guess and avail_letters to list to iterate over them, then .join them together. Need to print out dashes instead of the word to mimic a missing word, then replace those dashes with the correct letter guess. Perhaps make a list of dashes that can be iterated over to replace the dashes using the index"""
