@@ -68,7 +68,8 @@ def hangman():
     guess = ""
     while guess_counter > 0:
         guess = raw_input("What is your guess?")
-        #guess = guess.lowercase
+        guess = guess.lowercase
+        #use list() to split the word into a list of characters.
         if guess not in word:
             avail_letters.remove(guess)
             guess_counter -= 1
