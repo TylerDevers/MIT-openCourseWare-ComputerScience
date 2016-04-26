@@ -50,11 +50,13 @@ def hangman():
     #computer selects random word
     word = choose_word(wordlist)
     length  = len(word)
+    missing_letters = '-'*length
     print ("Hello, I am thinking of a word that is " + str(length) + " letters long.")
+    print missing_letters
 
-    for characters in str(length):
-        blank_space = "-"
-        print blank_space*length
+    # for characters in str(length):
+    #     blank_space = "-"
+    #     print blank_space*length
 
     number_guesses = 10
     print "You have " + str(number_guesses) + " guesses left"
@@ -62,7 +64,7 @@ def hangman():
     letters = "abcdefghijklmnopqrstuvwxyz"
     avail_letters = list(letters)
     print "Your available letters are:"
-    print avail_letters
+    print letters
 
     #while guess counter is less than 10
     guess_counter = 10
@@ -72,7 +74,9 @@ def hangman():
         guess = guess.lower()
         #use list() to split the word into a list of characters.
         #iterate over the list when word guesses are made.
-        if guess not in word:
+        if guess not in avail_letters:
+            print "You have either used that letter already, or chosed a character is not allowed."
+        elif guess not in word:
             avail_letters.remove(guess)
             guess_counter -= 1
             print "Nope! Try again. You now have {guess_counter} guesses left. Your available letters are:".format(guess_counter=guess_counter)
