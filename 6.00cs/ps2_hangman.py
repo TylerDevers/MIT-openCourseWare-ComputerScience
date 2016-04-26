@@ -59,7 +59,8 @@ def hangman():
     number_guesses = 10
     print "You have " + str(number_guesses) + " guesses left"
 
-    avail_letters = "abcdefghijklmnopqrstuvwxyz"
+    letters = "abcdefghijklmnopqrstuvwxyz"
+    avail_letters = list(letters)
     print "Your available letters are:"
     print avail_letters
 

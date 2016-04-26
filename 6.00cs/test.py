@@ -1,4 +1,4 @@
-guess = raw_input("give me the word: ")
+guess = list(raw_input("give me the word: "))
 print guess
 #guess = guess.split() #split method turns it into a list.
 guess_list = list(guess)
