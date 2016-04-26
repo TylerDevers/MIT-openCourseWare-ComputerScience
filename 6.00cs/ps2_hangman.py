@@ -54,10 +54,6 @@ def hangman():
     print ("Hello, I am thinking of a word that is " + str(length) + " letters long.")
     print missing_letters
 
-    # for characters in str(length):
-    #     blank_space = "-"
-    #     print blank_space*length
-
     number_guesses = 10
     print "You have " + str(number_guesses) + " guesses left"
 
@@ -93,3 +89,4 @@ def hangman():
 print hangman()
 
 """random pick of word, request letter guess, if guess is in word remove guess from avail_letters and add it to print out of word. Will probably need ot convert guess and avail_letters to list to iterate over them, then .join them together. Need to print out dashes instead of the word to mimic a missing word, then replace those dashes with the correct letter guess. Perhaps make a list of dashes that can be iterated over to replace the dashes using the index"""
+#next up, print blank spaces at each iteration, replace blank spaces with the correctly guessed letters.
