@@ -75,13 +75,13 @@ def hangman():
         if guess not in word:
             avail_letters.remove(guess)
             guess_counter -= 1
-            print "Nope! Try again. You now have {guess_counter} guesses left. Your available letters are:"
-            print avail_letters
+            print "Nope! Try again. You now have {guess_counter} guesses left. Your available letters are:".format(guess_counter=guess_counter)
+            print ''.join(avail_letters)
         else:
             avail_letters.remove(guess)
             guess_counter -= 1
-            print "Excellent! You found one! You have {guess_counter} guesses left. Your available letters are:"
-            print avail_letters
+            print "Excellent! You found one! You have {guess_counter} guesses left. Your available letters are:".format(guess_counter=guess_counter)
+            print ''.join(avail_letters)
     print "out of guesses!"
     #if word does not contain -, then you won
     #else if letter guess is in word, replace '-' with guess, and remove letter from avail_letters.

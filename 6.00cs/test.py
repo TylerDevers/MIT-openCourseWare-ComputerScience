@@ -4,3 +4,5 @@ print guess
 guess_list = list(guess)
 print guess_list
 print len(guess_list)
+joined = ''.join(guess_list)
+print joined

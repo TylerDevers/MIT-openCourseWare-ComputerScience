@@ -1,0 +1,12 @@
+This is a list of things I have learned while writing these programs:
+
+Hangman exercise:
+.lower() - the lower method is used to modify a string. It is not lowercase().
+
+list() - the list function can change a string into a list. list(string_name) does the trick
+
+.join() - the join method can turn a list into a string. This one is strange to me, since for it to work the string must put before the method, and the list is the arguement. so ''.join(list) would return a string of the list. this can be assigned to a variable, string_variable = ''.join(list)
+
+.format() - to embed a variable within a string, enclose the variable name within braces inside the string. then use the format method on the string. Put whatever we like within the braces, then link it to the variable in the arguement of the format method after the end of the string.
+  name = "tyler"
+  print "Hello {best_name}, that is the perfect name!".format(best_name=name)
