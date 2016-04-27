@@ -50,7 +50,9 @@ def hangman():
     #computer selects random word
     word = choose_word(wordlist)
     length  = len(word)
+    word_list = list(word)
     missing_letters = '-'*length
+    letters_list = list(missing_letters)
     print ("Hello, I am thinking of a word that is " + str(length) + " letters long.")
     print missing_letters
 
@@ -71,17 +73,24 @@ def hangman():
         #use list() to split the word into a list of characters.
         #iterate over the list when word guesses are made.
         if guess not in avail_letters:
-            print "You have either used that letter already, or chosed a character is not allowed."
+            print "You have either used that letter already, or chosen a character that is not allowed."
         elif guess not in word:
             avail_letters.remove(guess)
             guess_counter -= 1
             print "Nope! Try again. You now have {guess_counter} guesses left. Your available letters are:".format(guess_counter=guess_counter)
             print ''.join(avail_letters)
+            print missing_letters
         else:
             avail_letters.remove(guess)
             guess_counter -= 1
             print "Excellent! You found one! You have {guess_counter} guesses left. Your available letters are:".format(guess_counter=guess_counter)
             print ''.join(avail_letters)
+            for l in letters_list:
+                index = word_list.index(guess)
+                letters_list[index] = guess
+                missing_letters.join(letters_list) 
+            print missing_letters
+
     print "out of guesses!"
     #if word does not contain -, then you won
     #else if letter guess is in word, replace '-' with guess, and remove letter from avail_letters.
