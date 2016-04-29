@@ -56,7 +56,7 @@ def hangman():
     print ("Hello, I am thinking of a word that is " + str(length) + " letters long.")
     print missing_letters
 
-    number_guesses = 10
+    number_guesses = 15
     print "You have " + str(number_guesses) + " guesses left"
 
     letters = "abcdefghijklmnopqrstuvwxyz"
@@ -65,37 +65,44 @@ def hangman():
     print letters
 
     #while guess counter is less than 10
-    guess_counter = 10
     guess = ""
+    guess_counter = 15
     while guess_counter > 0:
-        guess = raw_input("What is your guess?")
-        guess = guess.lower()
+        # guess = raw_input("What is your guess?")
+        # guess = guess.lower()
         #use list() to split the word into a list of characters.
         #iterate over the list when word guesses are made.
-        if guess not in avail_letters:
-            print "You have either used that letter already, or chosen a character that is not allowed."
-        elif guess not in word:
-            avail_letters.remove(guess)
-            guess_counter -= 1
-            print "Nope! Try again. You now have {guess_counter} guesses left. Your available letters are:".format(guess_counter=guess_counter)
-            print ''.join(avail_letters)
-            print missing_letters
+        if ''.join(letters_list) == word:
+            print "You have won!!"
+            break
         else:
-            avail_letters.remove(guess)
-            guess_counter -= 1
-            print "Excellent! You found one! You have {guess_counter} guesses left. Your available letters are:".format(guess_counter=guess_counter)
-            print ''.join(avail_letters)
-            for l in letters_list:
-                index = word_list.index(guess)
-                letters_list[index] = guess
-                missing_letters.join(letters_list) 
-            print missing_letters
+            print ''
+            guess = raw_input("What is your guess?")
+            guess = guess.lower()
+            if guess not in avail_letters:
+                print "You have either used that letter already, or chosen a character that is not allowed."
+            elif guess not in word:
+                avail_letters.remove(guess)
+                guess_counter -= 1
+                print "Nope! Try again. You now have {guess_counter} guesses left. Your available letters are:".format(guess_counter=guess_counter)
+                print ''.join(avail_letters)
+                print ''.join(letters_list)
+                print ''
+            else:
+                avail_letters.remove(guess)
+                guess_counter -= 1
+                print "Excellent! You found one! You have {guess_counter} guesses left. Your available letters are:".format(guess_counter=guess_counter)
+                print ''.join(avail_letters)
+                for letter in word_list:
+                    if guess in word_list:
+                        letters_list[word_list.index(guess)] = guess
+                        word_list[word_list.index(guess)] = "?"
+                print ''.join(letters_list)
 
-    print "out of guesses!"
+    print ''
+    print "The word was {word}".format(word=word)
+
     #if word does not contain -, then you won
     #else if letter guess is in word, replace '-' with guess, and remove letter from avail_letters.
     #increment guess counter
 print hangman()
-
-"""random pick of word, request letter guess, if guess is in word remove guess from avail_letters and add it to print out of word. Will probably need ot convert guess and avail_letters to list to iterate over them, then .join them together. Need to print out dashes instead of the word to mimic a missing word, then replace those dashes with the correct letter guess. Perhaps make a list of dashes that can be iterated over to replace the dashes using the index"""
-#next up, print blank spaces at each iteration, replace blank spaces with the correctly guessed letters.

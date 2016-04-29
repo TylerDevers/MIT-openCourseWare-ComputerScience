@@ -10,3 +10,5 @@ list() - the list function can change a string into a list. list(string_name) do
 .format() - to embed a variable within a string, enclose the variable name within braces inside the string. then use the format method on the string. Put whatever we like within the braces, then link it to the variable in the arguement of the format method after the end of the string.
   name = "tyler"
   print "Hello {best_name}, that is the perfect name!".format(best_name=name)
+
+printing the index - to print the indices of a list, use brackets then colon after the list name. hence list[:] will print the entire range of indexes from the list.
