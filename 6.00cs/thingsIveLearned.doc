@@ -12,3 +12,8 @@ list() - the list function can change a string into a list. list(string_name) do
   print "Hello {best_name}, that is the perfect name!".format(best_name=name)
 
 printing the index - to print the indices of a list, use brackets then colon after the list name. hence list[:] will print the entire range of indexes from the list.
+
+I can modify and change a list index by embedding the index() method within the list brackets. The code below takes a guess index and assigns it a value. the guess index is based upon the index value of another list all together.
+  if number_to_insert in insert:
+    guess[insert.index(number_to_insert)] = number_to_insert
+    insert[insert.index(number_to_insert)] = "?"
