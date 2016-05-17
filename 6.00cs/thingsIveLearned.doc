@@ -17,3 +17,10 @@ I can modify and change a list index by embedding the index() method within the 
   if number_to_insert in insert:
     guess[insert.index(number_to_insert)] = number_to_insert
     insert[insert.index(number_to_insert)] = "?"
+
+
+problem set 3 word games wordgames
+
+These word games will be similar to scrabble and will be saved as ps3a.py. This is a test driven development exercise, or unit testing, and my solutions will be tested by test_psa.py.
+
+problem 1 word scores - the first function get_word_score will calculate the score for the players word.
