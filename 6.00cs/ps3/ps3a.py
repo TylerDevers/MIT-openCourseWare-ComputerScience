@@ -183,7 +183,7 @@ def is_valid_word(word, hand, word_list):
             return False
 
     return True
-    
+
 def calculate_handlen(hand):
     handlen = 0
     for v in hand.values():
@@ -222,7 +222,25 @@ def play_hand(hand, word_list):
 
     """
     # TO DO ...
-
+    original_handlen=calculate_handlen(hand)
+    total = 0
+    while calculate_handlen(hand) > 0:
+        print 'Current Hand:',
+        display_hand(hand)
+        userWord = raw_input('Enter word, or a "." to indicate that you are finished: ')
+        if userWord == '.':
+            print 'Total score: %d points.' % total
+            return
+        else:
+            isValid = is_valid_word(userWord, hand, word_list)
+            if not isValid:
+                print 'That is not a valid word. Please choose another word'
+            else:  # if valid
+                point = get_word_score(userWord, original_handlen) # calculate points
+                total += point # add points to total
+                print '"%s" earned %d points. Total: %d points' % (userWord, point, total)# display points and total
+                hand = update_hand(hand, userWord) # update hand
+    print 'Run out of letters. Total score: %d points.' % total
 #
 # Problem #5: Playing a game
 # Make sure you understand how this code works!
