@@ -24,3 +24,5 @@ problem set 3 word games wordgames
 These word games will be similar to scrabble and will be saved as ps3a.py. This is a test driven development exercise, or unit testing, and my solutions will be tested by test_psa.py.
 
 problem 1 word scores - the first function get_word_score will calculate the score for the players word.
+
+problem 2 - dictionary .keys() method. the keys method returns all of the keys for a given dictionary.
