@@ -173,7 +173,17 @@ def is_valid_word(word, hand, word_list):
     word_list: list of lowercase strings
     """
     # TO DO...
+    #if the word is in the word list return True
+    #returns true if the hand has the letters for the word
+    if word not in word_list:
+        return False
+    wordFreq = get_frequency_dict(word)
+    for letter in wordFreq.keys():
+        if wordFreq[letter] > hand.get(letter, 0):
+            return False
 
+    return True
+    
 def calculate_handlen(hand):
     handlen = 0
     for v in hand.values():
