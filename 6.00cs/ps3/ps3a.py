@@ -152,7 +152,13 @@ def update_hand(hand, word):
     returns: dictionary (string -> int)
     """
     # TO DO ...
-
+    #make a copy of hand.
+    #reduce letters in hand when used.
+    #return the modified copy of the hand.
+    hand2 = hand.copy()
+    for letter_used in word:
+        hand2[letter_used] -= 1
+    return hand2
 #
 # Problem #3: Test word validity
 #

@@ -25,4 +25,6 @@ These word games will be similar to scrabble and will be saved as ps3a.py. This 
 
 problem 1 word scores - the first function get_word_score will calculate the score for the players word.
 
-problem 2 - dictionary .keys() method. the keys method returns all of the keys for a given dictionary.
+problem 2 - dictionary .keys() method. the keys method returns all of the keys for a given dictionary. print dict1.keys()  -  this will print only the keys of the dictionary.
+
+dictionary .copy() method. the copy method will make a copy of the requested dictionary and assign it to the specified variable. dict2 = dict1.copy(). Thismakes a copy dict1 called dict2.
