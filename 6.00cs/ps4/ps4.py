@@ -121,7 +121,16 @@ def build_coder(shift):
     (The order of the key-value pairs may be different.)
     """
     ### TODO.
-
+    #define a dictionary of alphabet where the key and value are the same letter. 
+    #write code that shifts the value of the letter x places away from the keys value, the starting key should be an empty string representing a space.
+    #import string alphapbet and turn it into a dict
+    shift = 0
+    key_dict = {}
+    if (shift < -27) or (shift > 27):
+      print "You must use a value between -27 and 27"
+    else:
+      
+    
 def build_encoder(shift):
     """
     Returns a dict that can be used to encode a plain text. For example, you

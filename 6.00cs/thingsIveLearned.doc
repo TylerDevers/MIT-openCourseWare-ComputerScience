@@ -28,3 +28,29 @@ problem 1 word scores - the first function get_word_score will calculate the sco
 problem 2 - dictionary .keys() method. the keys method returns all of the keys for a given dictionary. print dict1.keys()  -  this will print only the keys of the dictionary.
 
 dictionary .copy() method. the copy method will make a copy of the requested dictionary and assign it to the specified variable. dict2 = dict1.copy(). Thismakes a copy dict1 called dict2.
+
+Problem set 4 ceasar cypher
+
+import alphabet into a string instead of defining the string longhand.
+>>> import string
+>>> string.ascii_lowercase
+'abcdefghijklmnopqrstuvwxyz'
+
+or, if a list is needed.
+
+list(string.ascii_lowercase)
+
+convert string into dictionary with empty values, uses a temperary t dict. make the string, then split it with .split()
+
+st="food | dairy | milk"
+keys=st.split(" | ")
+
+new_cat="eco" # should be added
+d = t = {} # t is my temporary dictionary
+
+for i in keys:
+    t[i] = {}
+    t = t[i]
+t[new_cat] = {}
+
+print d
