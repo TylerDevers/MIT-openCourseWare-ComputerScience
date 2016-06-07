@@ -124,6 +124,8 @@ def build_coder(shift):
     #define a dictionary of alphabet where the key and value are the same letter. 
     #write code that shifts the value of the letter x places away from the keys value, the starting key should be an empty string representing a space.
     #import string alphapbet and turn it into a dict
+    lowercase = string.ascii_lowercase + ' '
+    uppercase = string.ascii_uppercase + ' '
     shift = 0
     key_dict = {}
     if (shift < -27) or (shift > 27):
